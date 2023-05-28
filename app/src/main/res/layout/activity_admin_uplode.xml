@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:text="Product  Quantity"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPQuantity" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="Product Price"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPrice"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPrice" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="72dp"
+        android:text="Product ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPId"
+        android:layout_width="232dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:hint="enter Product  ID"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:text="Product Name"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPName"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPName" />
+
+    <EditText
+        android:id="@+id/editTextTextPName"
+        android:layout_width="218dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="eNTER Product Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPrice"
+        android:layout_width="190dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="95dp"
+        android:ems="10"
+        android:hint="Enter Product  Price"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTextTextPQuantity"
+        android:layout_width="201dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Enter Product Quantity"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/buttonAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="41dp"
+        android:text="ADMIN HOME PAGE"
+        app:layout_constraintStart_toStartOf="@+id/buttonUplode"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUplode" />
+
+    <Button
+        android:id="@+id/buttonUplode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="169dp"
+        android:layout_marginBottom="171dp"
+        android:text="UPLODE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPrice" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="6dp"
+        android:text="OMR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPrice"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPName" />
+</androidx.constraintlayout.widget.ConstraintLayout>
