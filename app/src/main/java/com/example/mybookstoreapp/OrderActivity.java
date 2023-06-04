@@ -3,6 +3,7 @@ package com.example.mybookstoreapp;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -20,9 +21,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.security.Key;
 
 public class OrderActivity extends AppCompatActivity {
-    TextView txtpid,txtname,txtprice,txtavaQty,txttotal;
+    TextView txtname,txtprice,txtavaQty;
     EditText edQty;
-    Button btnOrder;
+    Button btnOrder,btnLogout;
     int reqQty;
     double Total;
     FirebaseDatabase fb;
@@ -33,17 +34,16 @@ public class OrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        txtpid=findViewById(R.id.textView18);
         txtname=findViewById(R.id.textView22);
         txtprice=findViewById(R.id.textView24);
         txtavaQty=findViewById(R.id.textView26);
         edQty=findViewById(R.id.editTextText6);
         btnOrder=findViewById(R.id.button7);
+        btnLogout = findViewById(R.id.button9);
         fb=FirebaseDatabase.getInstance();
         mydb=fb.getReference("order");
 
         Bundle b = getIntent().getExtras();
-        txtpid.setText(b.getString("productID"));
         txtname.setText(b.getString("productname"));
         txtprice.setText(b.getString("productprice"));
         txtavaQty.setText(b.getString("productavailable"));
@@ -68,10 +68,11 @@ public class OrderActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Total = reqQty * Double.parseDouble(txtprice.getText().toString());
-                            MyOrder order = new MyOrder(txtpid.getText().toString(),edQty.getText().toString(),String.valueOf(Total),Global.myUserName);
+                            MyOrder order = new MyOrder(txtname.getText().toString(),edQty.getText().toString(),String.valueOf(Total),Global.myUserName);
                             String key = mydb.push().getKey();
                             mydb.child(key).setValue(order);
-                            // Toast.makeText(OrderActivity.this, "Total C", Toast.LENGTH_SHORT).show();
+
+
 
                             NotificationCompat.Builder nb = new NotificationCompat.Builder(OrderActivity.this,"101");
                             nb.setContentTitle("Customer Order");
@@ -101,6 +102,16 @@ public class OrderActivity extends AppCompatActivity {
 
                     adb.show();
                 }
+
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i=new Intent(OrderActivity.this, loginActivity.class);
+                startActivity(i);
 
             }
         });
